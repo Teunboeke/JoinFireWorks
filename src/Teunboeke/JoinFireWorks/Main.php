@@ -51,3 +51,15 @@ class Main extends PluginBase implements Listener {
     	public function onJoin(PlayerJoinEvent $event) {
           		$fw = ItemFactory::get(Item::FIREWORKS);
           		$fw->addExplosion(mt_rand(0, 4), $this->getFireworksColor(), "", true, true); 
+            	$fw->setFlightDuration(mt_rand(1, 2));
+        		$level = $this->getServer()->getDefaultLevel();
+           		$vector3 = $level->getSpawnLocation()->add(0, 1, 0);
+        		$nbt = FireworksRocket::createBaseNBT($vector3, new Vector3(0.001, 0.05, 0.001), lcg_value() * 360, 90);
+           		$entity = FireworksRocket::createEntity("FireworksRocket", $level, $nbt, $fw);
+           		if ($entity instanceof FireworksRocket) {
+                			if($event->getPlayer()->hasPermission("join.firework")) {
+                           				$entity->spawnTo($event->getPlayer());
+                   		}     
+           		} 
+	}
+}
