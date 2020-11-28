@@ -37,3 +37,6 @@ class Fireworks extends Item {
   	public const COLOR_DARK_PINK = "\x0d";
   	public const COLOR_GOLD = "\x0e";
   	public const COLOR_WHITE = "\x0f";
+  
+  	public function __construct(int $meta = 0) {
+      		parent::__construct(self::FIREWORKS, $meta, "Fireworks");
