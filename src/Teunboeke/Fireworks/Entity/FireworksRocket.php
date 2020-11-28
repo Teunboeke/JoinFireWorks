@@ -52,3 +52,6 @@ class FireworksRocket extends Entity {
 		
 			return $hasUpdate;
 			}
+	
+	public function setLifeTime(int $life): void {
+			$this->lifeTime = $life;	
