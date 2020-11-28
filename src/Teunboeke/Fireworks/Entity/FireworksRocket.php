@@ -62,4 +62,11 @@ class FireworksRocket extends Entity {
 				$this->doExplosionAnimation();
 				$this->flagForDespawn();
 				return true;
+		}
 			
+			return false;
+		}
+	protected function doExplosionAnimation(): void {
+		$this->broadcastEntityEvent(ActorEventPacket::FIREWORK_PARTICLES);
+		}
+	}
