@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Teunboeke\FireWorks\entity;
+namespace Teunboeke\FireWorks\Entity;
 
 use Teunboeke\Fireworks\item\Fireworks;
 use pocketmine\entity\Entity;
