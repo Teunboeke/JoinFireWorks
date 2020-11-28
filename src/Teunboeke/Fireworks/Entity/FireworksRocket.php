@@ -43,4 +43,8 @@ class FireworksRocket extends Entity {
 	public function entityBaseTick(int $tickDiff = 1): bool {
 			if($this->closed) {
 				return false;
-					
+			}	
+		
+			$hasUpdate = parent::entityBaseTick($tickDiff);
+			if($this->doLifeTimeTick()) {
+				$hasUpdate = true;	
