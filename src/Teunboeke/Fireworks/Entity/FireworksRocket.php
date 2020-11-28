@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Teunboeke\FireWorks\entity;
 
-use BlockHorizons\Fireworks\item\Fireworks;
+use Teunboeke\Fireworks\item\Fireworks;
 use pocketmine\entity\Entity;
 use pocketmine\level\Level;
 use pocketmine\nbt\tag\CompoundTag;
@@ -29,3 +29,9 @@ class FireworksRocket extends Entity {
       		if($fireworks !== null && $fireworks->getNamedTagEntry("Fireworks") instanceof CompoundTag) {
       $this->propertyManager->setCompoundTag(self::DATA_FIREWORK_ITEM, $fireworks->getNamedTag());
             			$this->setLifeTime($fireworks->getRandomizedFlightDuration());
+            		}
+
+   	$level->broadcastLevelSoundEvent($this, LevelSoundEventPacket::SOUND_LAUNCH);
+      	}
+      	
+     	protected function tryChangeMovement(): void {
