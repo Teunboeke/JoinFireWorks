@@ -55,3 +55,7 @@ class FireworksRocket extends Entity {
 	
 	public function setLifeTime(int $life): void {
 			$this->lifeTime = $life;	
+	}
+	
+	protected function doLifeTimeTick(): bool {
+		if(!$this->isFlaggedForDespawn() and --$this->lifeTime < 0) {
