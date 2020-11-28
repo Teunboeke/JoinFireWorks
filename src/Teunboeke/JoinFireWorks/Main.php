@@ -34,4 +34,12 @@ class Main extends PluginBase implements Listener {
             			Fireworks::COLOR_BLUE,
             			Fireworks::COLOR_DARK_PURPLE,
             			Fireworks::COLOR_DARK_AQUA,
-            
+            			Fireworks::COLOR_GRAY,
+            			Fireworks::COLOR_DARK_GRAY,
+            			Fireworks::COLOR_PINK,
+            			Fireworks::COLOR_GREEN,
+            			Fireworks::COLOR_YELLOW,
+            			Fireworks::COLOR_LIGHT_AQUA,
+            			Fireworks::COLOR_DARK_PINK,
+            			Fireworks::COLOR_GOLD,
+            			Fireworks::COLOR_WHITE
