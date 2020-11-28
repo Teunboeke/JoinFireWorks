@@ -59,3 +59,7 @@ class FireworksRocket extends Entity {
 	
 	protected function doLifeTimeTick(): bool {
 		if(!$this->isFlaggedForDespawn() and --$this->lifeTime < 0) {
+				$this->doExplosionAnimation();
+				$this->flagForDespawn();
+				return true;
+			
