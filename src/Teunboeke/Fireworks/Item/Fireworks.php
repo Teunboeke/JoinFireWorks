@@ -22,3 +22,10 @@ class Fireworks extends Item {
   
   	//color = chr(dye metadata)
   	public const COLOR_BLACK = "\x00";
+  	public const COLOR_RED = "\x01";
+  	public const COLOR_DARK_GREEN = "\x02";
+  	public const COLOR_BROWN = "\x03";
+  	public const COLOR_BLUE = "\x04";
+  	public const COLOR_DARK_PURPLE = "\x05";
+  	public const COLOR_DARK_AQUA = "\x06";
+  	public const COLOR_GRAY = "\x07";
