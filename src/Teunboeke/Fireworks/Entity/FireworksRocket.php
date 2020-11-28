@@ -19,3 +19,13 @@ class FireworksRocket extends Entity {
   
   	public $width = 0.25;
   	public $height = 0.25;
+
+  	/** @var int */
+  	protected $lifeTime = 0;
+  
+  	public function __construct(Level $level, CompoundTag $nbt, ?Fireworks $fireworks = null){
+            parent::__construct($level, $nbt);    
+      
+      		if($fireworks !== null && $fireworks->getNamedTagEntry("Fireworks") instanceof CompoundTag) {
+      $this->propertyManager->setCompoundTag(self::DATA_FIREWORK_ITEM, $fireworks->getNamedTag());
+            			$this->setLifeTime($fireworks->getRandomizedFlightDuration());
