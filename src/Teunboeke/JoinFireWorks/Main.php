@@ -43,3 +43,11 @@ class Main extends PluginBase implements Listener {
             			Fireworks::COLOR_DARK_PINK,
             			Fireworks::COLOR_GOLD,
             			Fireworks::COLOR_WHITE
+          ];  
+
+      		return $color_array[array_rand($color_array)];
+   	}   
+  
+    	public function onJoin(PlayerJoinEvent $event) {
+          		$fw = ItemFactory::get(Item::FIREWORKS);
+          		$fw->addExplosion(mt_rand(0, 4), $this->getFireworksColor(), "", true, true); 
