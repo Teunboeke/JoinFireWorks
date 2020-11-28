@@ -34,4 +34,9 @@ class FireworksRocket extends Entity {
    	$level->broadcastLevelSoundEvent($this, LevelSoundEventPacket::SOUND_LAUNCH);
       	}
       	
-     	protected function tryChangeMovement(): void {
+   	protected function tryChangeMovement(): void {
+      		$this->motion->x *= 1.15;
+      		$this->motion->y += 0.04;
+      		$this->motion->z *= 1.15;
+      
+	}
